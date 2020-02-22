@@ -1,0 +1,41 @@
+<div class="container mx-auto px-4 py-4">
+    <div class="flex justify-center">
+        <div class="text-6xl" id="timer">
+            <countdown #cd (event)="handleEvent($event)" [config]="countDownConfig"></countdown>
+        </div>
+    </div>
+    <div class="flex justify-around">
+        <button (click)="cd.begin()" *ngIf="action === ''"
+                class="bg-green-400 hover:bg-green-700 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+            <fa-icon [icon]="icons[0]" class="px-1"></fa-icon>
+            <span class="px-2">INICIAR</span>
+        </button>
+
+        <button (click)="cd.restart()" *ngIf="action === 'stop'"
+                class="bg-green-400 hover:bg-green-700 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+            <fa-icon [icon]="icons[0]" class="px-1"></fa-icon>
+            <span class="px-2">REINICIAR</span>
+        </button>
+
+        <button (click)="cd.resume()" *ngIf="action === 'pause'"
+                class="bg-green-400 hover:bg-green-700 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+            <fa-icon [icon]="icons[0]" class="px-1"></fa-icon>
+            <span class="px-2">CONTINUAR</span>
+        </button>
+
+        <button (click)="cd.pause()" *ngIf="action === 'start' || action === 'resume'"
+                class="bg-yellow-400 hover:bg-yellow-700 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+            <fa-icon [icon]="icons[1]" class="px-1"></fa-icon>
+            <span class="px-2">PAUSE</span>
+        </button>
+        <button (click)="cd.stop()" *ngIf="action==='start' || action === 'resume'"
+                class="bg-red-400 hover:bg-red-700 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+            <fa-icon [icon]="icons[2]" class="px-1"></fa-icon>
+            <span class="px-2">STOP</span>
+        </button>
+    </div>
+</div>
+
+<audio #audioOption>
+  <source src='./assets/sounds/funny-notification-sound.mp3' type="audio/mp3">
+</audio>
