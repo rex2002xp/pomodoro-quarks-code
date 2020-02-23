@@ -54,7 +54,7 @@ Actualmente corre con:
 Clona el repositorio localmente:
 
 ``` bash
-git clone https://github.com/maximegris/angular-electron.git
+git clone git@github.com:rex2002xp/pomodoro-quarks-code.git
 ```
 
 Instala las dependencias:
@@ -100,3 +100,11 @@ npm install
 Tus podcast definitivamente ayudan de mejorar nuestra productividad.
 - Maxime GRIS  https://github.com/maximegris/angular-electron.git  
 Tu proyecto de integracion de Angular con electron es de los mejores.
+
+
+## RoadMap
+
+- Agregar el contador de los periodos de pausas.
+- Agregar un indicador de en cual pomodoro se va, y cuantos faltan para la pausa mayor.
+- Registrar la hora de inicio y de fin de cada pomodoro, para tener el historico de los ultimos 10.
+
